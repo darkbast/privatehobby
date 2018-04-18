@@ -14,7 +14,9 @@ router.post('/',(req,res,next) => {
 });
 
 router.post('/check',(req,res,next) => {
-    
+    console.log("/login/check ");
+    console.log(req.body);
+    res.end("ok");
 });
 
 
