@@ -1,7 +1,27 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var app = express();
+
+// EJS설정
+app.set('views',__dirname + '/views');
+app.set('view engine','ejs');
+app.engine('html',require('ejs').renderFile);
+
+
+// 세션 설정
+app.use(session({
+  secret:'!@#mysessionkey#@!',
+  resave:false,
+  saveUninitialized:true
+}));
+
+/*
+req.session.destroy(function(err){
+  // cannot access session here
+});
+*/
 
 // DB접속
 
