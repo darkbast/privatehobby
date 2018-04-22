@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
     user_id:{type:String,required:true},
     user_pwd:{type:String,required:true},
-    user_name:{type:String},
+    user_name:{type:String,required:true},
+    user_email:{type:String},
     created_at:{type:Date,default:Date.now()},
     updated_at:{type:Date,default:Date.now()},
 });

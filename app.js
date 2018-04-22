@@ -7,7 +7,7 @@ var app = express();
 // EJS설정
 app.set('views',__dirname + '/views');
 app.set('view engine','ejs');
-app.engine('html',require('ejs').renderFile);
+//app.engine('html',require('ejs'));
 
 
 // 세션 설정
@@ -28,14 +28,12 @@ req.session.destroy(function(err){
 // 라우터 설정
 var LoginRouter = require('./routers/r_login');
 
-
 app.use(bodyParser.urlencoded({extended:true}));
 
 // 정적 폴더정의
 app.use('/disp',express.static(path.join(__dirname,'views')));
 
 app.use('/login',LoginRouter);
-
 
 app.listen(8080,() => {
      console.log('Start 8080');
