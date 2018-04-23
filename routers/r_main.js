@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var UserModel = require('../models/m_users');
 
 router.get('/',(req,res,next) => {
-  console.log('/login get');
+  console.log('/main get');
   res.render(
-    path.join(__dirname,'/..','views','html','login','login')
+    path.join(__dirname,'/..','views','html','main','main')
+  );
+}).post('/',(req,res,next) => {
+  console.log('/main post');
+  res.render(
+    path.join(__dirname,'/..','views','html','main','main')
   );
 });
 

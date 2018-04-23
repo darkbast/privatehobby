@@ -10,7 +10,7 @@ router.get('/',(req,res,next) => {
   );
 });
 
-router.post('/check',(req,res,next) => {
+router.post('/',(req,res,next) => {
   console.log("check");
   var req_user_id = req.body.user_id;
   var req_user_pwd = req.body.user_pwd;
@@ -25,24 +25,5 @@ router.post('/check',(req,res,next) => {
   res.end("ok");
 });
 
-router.get('/login_regist',(req,res,next) => {
-  console.log('/login_regist disposal');
-  
-  res.render(
-    path.join(__dirname,'/..','views','html','login','login_regist')
-  );
-});
-
-
-
-router.post('/check_regist',(req,res,next) => {
-  var req_user_id = req.body.user_id;
-  var req_user_pwd = req.body.user_pwd;
-  
-  UserModel.find({user_id:req_user_id,user_pwd:req_user_pwd},function(err,result){
-    if(err) throw err;
-    console.log(result);
-  });  
-});
 
 module.exports = router;

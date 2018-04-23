@@ -5,6 +5,7 @@ var MenuSchema = new Schema({
     menu_id:{type:String,required:true},
     menu_name:{type:String},
     menu_auth:{type:Number,default:10},
+    menu_url:{type:String}
     created_at:{type:Date,default:Date.now()},
     updated_at:{type:Date,default:Date.now()},
 });
