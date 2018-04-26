@@ -2,7 +2,9 @@ var express = require('express'),
     morgan = require('morgan'),
     compress = require('compression'),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    config = require('./config'),
+    session = require('express-session');
 
 module.exports = function(){
   var app = express();
@@ -14,13 +16,23 @@ module.exports = function(){
   }
   
   app.use(bodyParser.urlencoded({
-    extend : true;
+    extended : true
   }));
   
   app.use(bodyParser.json());
   app.use(methodOverride());
-  // require('../');
-  require('../routers/r_index');
+  
+  app.use(session({
+    saveUninitialized:true,
+    resave:true,
+    secret:config.sessionSecret
+  }));
+  
+  app.set('views','./app/views');
+  app.set('view engine','ejs');
+  
+  require('../app/routes/index.server.routes')(app);
+  app.use(express.static('./static'));
   
   return app;
 };
