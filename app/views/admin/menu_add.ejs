@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="initial-scale=1">
+  <script type='text/javascript' src='/js/jquery-3.3.1.min.js'></script>
+  <style>
+    td > label {
+      padding-left:10px;
+      padding-right:10px;
+    }
+  </style>
+</head>
+<body>
+  <% include ../layout/layout_admin_menu %>
+  <div>
+    <table>
+      <tr>
+        <td><label for="menu_id">메뉴아이디</label></td>
+        <td><input type="text" class="form-control" id="menu_id"></td>
+      </tr>
+      <tr>
+        <td><label for="menu_name">메뉴명</label></td>
+        <td><input type="text" class="form-control" id="menu_name"></td>
+      </tr>
+      <tr>
+          <td><label for="menu_auth">메뉴권한</label></td>
+          <td><input type="text" class="form-control" id="menu_auth"></td>
+      </tr>
+      <tr>
+          <td><label for="menu_url">메뉴URL</label></td>
+          <td><input type="text" class="form-control" id="menu_url"></td>
+      </tr>
+      <tr>
+          <td><label for="submenus_id">서브아이디</label></td>
+          <td><input type="text" class="form-control" id="submenus_id"></td>
+      </tr>
+      <tr>
+          <td><label for="submenus_name">서브메뉴명</label></td>
+          <td><input type="text" class="form-control" id="submenus_name"></td>
+      </tr>
+    </table>
+      <div class="btn-group" role="group">
+    <a href="#" class="btn btn-primary">등록</a>
+  </div>
+  </div>
+
+</body>
+</html>

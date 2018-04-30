@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="initial-scale=1">
+  <script type='text/javascript' src='/js/jquery-3.3.1.min.js'></script>
+</head>
+<body>
+  <% include ../layout/layout_admin_menu %>
+  <form class="form-inline" role="form">
+    <div class="form-group">
+        <label for="menu_name">메뉴명</label>
+        <input type="text" class="form-control" id="menu_name" placeholder="메뉴명을 입력하세요">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="submenu_name" placeholder="서브메뉴명을 입력하세요">
+    </div>
+        <button class="btn btn-default">검색</button>
+  </form>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">검색내용</div>
+    <table class="table">
+      <thead>
+        <td>#</td>
+        <td>메뉴명</td>
+        <td>서브메뉴명</td>
+      </thead>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
