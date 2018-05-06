@@ -4,6 +4,7 @@
   <meta charset='UTF-8'>
   <meta name="viewport" content="initial-scale=1">
   <script type='text/javascript' src='/js/jquery-3.3.1.min.js'></script>
+  <script type='text/javascript' src='/js/admin/menu.js'></script>
   <style>
     td > label {
       padding-left:10px;
@@ -14,36 +15,75 @@
 <body>
   <% include ../layout/layout_admin_menu %>
   <div>
-    <table>
-      <tr>
-        <td><label for="menu_id">메뉴아이디</label></td>
-        <td><input type="text" class="form-control" id="menu_id"></td>
-      </tr>
-      <tr>
-        <td><label for="menu_name">메뉴명</label></td>
-        <td><input type="text" class="form-control" id="menu_name"></td>
-      </tr>
-      <tr>
-          <td><label for="menu_auth">메뉴권한</label></td>
-          <td><input type="text" class="form-control" id="menu_auth"></td>
-      </tr>
-      <tr>
-          <td><label for="menu_url">메뉴URL</label></td>
-          <td><input type="text" class="form-control" id="menu_url"></td>
-      </tr>
-      <tr>
-          <td><label for="submenus_id">서브아이디</label></td>
-          <td><input type="text" class="form-control" id="submenus_id"></td>
-      </tr>
-      <tr>
-          <td><label for="submenus_name">서브메뉴명</label></td>
-          <td><input type="text" class="form-control" id="submenus_name"></td>
-      </tr>
-    </table>
+    <pre>
+초기
+  메인메뉴 기본 오픈
+  서브메뉴 기본 닫힘
+메인메뉴의 기본을 선택하면 
+  서브메뉴 입력 가능
+  서브메뉴는 반드시 메인메뉴가 선택되어야함.
+    </pre>
+  </div>
+  <form action="/menu/add">
+    <div id="status"></div>
+    <div>
+      <h1>메인메뉴</h1>
+      <table>
+        <tr>
+          <td><label for="menu_name">메뉴명(영어)</label></td>
+          <td><input type="text" class="form-control" id="menu_name"></td>
+        </tr>
+        <tr>
+          <td><label for="menu_dname">표시메뉴명</label></td>
+          <td><input type="text" class="form-control" id="menu_dname"></td>
+        </tr>
+        <tr>
+            <td><label for="menu_auth">메뉴권한</label></td>
+            <td>
+              <input type="text" class="form-control" id="menu_auth" value="999">
+          </td>
+        </tr>
+        <tr>
+            <td><label for="menu_url">메뉴URL</label></td>
+            <td><input type="text" class="form-control" id="menu_url"></td>
+        </tr>
+      </table>
       <div class="btn-group" role="group">
-    <a href="#" class="btn btn-primary">등록</a>
-  </div>
-  </div>
-
+        <button id="main_add" type="button" class="btn btn-default">메인메뉴등록</button>
+      </div>
+    </div>
+  </form>
+  <form action="">
+    <div>
+      <h1>서브메뉴</h1>
+      <table>
+<!--
+        <tr>
+            <td><label for="submenus_id">서브아이디</label></td>
+            <td><input type="text" class="form-control" id="submenus_id"></td>
+        </tr>
+-->
+        <tr>
+            <td><label for="smenu_name">서브메뉴명</label></td>
+            <td><input type="text" class="form-control" id="smenu_name"></td>
+        </tr>
+        <tr>
+            <td><label for="smenu_dname">표시서브메뉴명</label></td>
+            <td><input type="text" class="form-control" id="smenu_dname"></td>
+        </tr>
+        <tr>
+            <td><label for="smenu_auth">서브권한</label></td>
+            <td><input type="text" class="form-control" id="smenu_auth"></td>
+        </tr>
+        <tr>
+            <td><label for="smenu_url">서브URL</label></td>
+            <td><input type="text" class="form-control" id="smenu_url"></td>
+        </tr>
+      </table>
+      <div class="btn-group" role="group">
+        <button id="sub_add" type="button" class="btn btn-default">서브메뉴등록</button>
+      </div>
+    </div>
+  </form>
 </body>
 </html>

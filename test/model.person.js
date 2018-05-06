@@ -7,7 +7,7 @@ var PersonSchema = new Schema({
 });
   
 var SubPersonSchema = new Schema({
-  menu_id : {type:String},
+  menu_id : {type:Schema.Types.ObjectId,ref:'P1'},
   sub_id : {type:String},
   sub_name : {type:String}
 });
